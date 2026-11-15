@@ -25,10 +25,21 @@ def read_item(id:int):
 
 def add_item(item:CreateItem):
     prev = len(datasets)
+    for obj in datasets:
+        if obj["id"] == item.id:
+            return False
     datasets.append({"id": item.id, "category": item.category, "size": item.size})
-    if prev < len(datasets):
-        return True
+    return True    
+
+def patch_item(id:int, item:CreateItem):
+    for obj in datasets:
+        if obj["id"] == id:
+            obj["category"] = item.category,
+            obj["size"] = item.size
+            return True
     return False
+
+
 
 def delete_item(id:int):
     length = len(datasets)
