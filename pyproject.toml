@@ -1,0 +1,19 @@
+[project]
+name = "restapiprac"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Jonathan Villanueva", email = "jonathanvillanueva171@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi[standard]>=0.163.0",
+]
+
+[project.scripts]
+restapiprac = "restapiprac:main"
+
+[build-system]
+requires = ["uv_build>=0.12.1,<0.13.0"]
+build-backend = "uv_build"
